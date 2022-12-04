@@ -6,5 +6,3 @@
 - Node.js와 Express.js
 - Express.js와 MongoDB
 - 웹 개발 포트폴리오 만들기 프로젝트
-
-1202
