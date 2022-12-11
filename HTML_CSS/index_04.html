@@ -1,0 +1,308 @@
+<!-- 1-4. 웹 사이트의 레이아웃 -->
+
+<!-- 박스 모델 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>박스모델</title>
+
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+
+      background-color: yellow;
+
+      border: solid 10px red;
+
+      margin-left: 100px;
+      padding-left: 100px;
+
+    }
+  </style>
+
+</head>
+<body>
+
+  <div>Hello World</div>
+
+</body>
+</html>
+
+
+
+<!-- Block 요소와 Inline 요소 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Block 요소와 Inline 요소</title>
+  <style>
+    p {
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+      margin-top: 100px;
+    }
+    a {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      margin-top: 100px;
+    }
+    /* 자식 태그의 margin 값을 부여하면 자식인 <article> 뿐만 아니라 부모인 <main> 에도 영향을 미친다 */
+  </style>
+</head>
+<body>
+  <!-- Block 요소 -->
+  <p>Block 요소</p>
+  <p>Block 요소</p>
+  <p>Block 요소</p>
+  <!-- Inline 요소 -->
+  <a href="#">Inline 요소</a>
+  <a href="#">Inline 요소</a>
+  <a href="#">Inline 요소</a>
+</body>
+</html>
+
+
+
+
+<!-- 레이아웃에 미치는 속성 - display -->
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <title>레이아웃에 영향을 미치는 속성 : display</title>
+  <style>
+    p {
+      width: 300px;
+      height: 300px;
+      background-color: pink;
+      display: inline;
+    }
+    
+    a {
+      width: 300px;
+      height: 300px;
+      background-color: yellow;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+   <p>Block Element</p>
+   <p>Block Element</p>
+
+   <p>Block Element</p>
+
+   <a href="#">Inline Element</a>
+   <a href="#">Inline Element</a>
+   <a href="#">Inline Element</a>
+
+</body>
+</html>
+
+
+
+<!-- 레이아웃에 미치는 속성 - float -->
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>레이아웃에 영향을 미치는 속성 - float</title>
+
+  <style>
+    header {
+      width: 100%;
+      height: 100px;
+      background-color: yellow;
+    }
+
+    #left {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      float: left;
+    }
+
+    main {
+      width: 300px;
+      height: 200px;
+      background-color: green;
+      float: left;
+    }
+
+    #right {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      float: right;
+    }
+
+    footer {
+      width: 100%;
+      height: 100px;
+      background-color: black;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header></header>
+
+  <article id="left"></article>
+
+  <main></main>
+
+  <article id="right"></article>
+
+  <footer></footer>
+
+</body>
+
+</html>
+
+
+
+<!-- 레이아웃에 미치는 속성 - clear -->
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>레이아웃에 영향을 미치는 속성 - clear</title>
+  
+  <style>
+    
+    header {
+      width: 100%;
+      height: 100px;
+      background-color: yellow;
+    }
+    
+    #left {
+      float: left;
+      
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+    
+    main {
+      float: left;
+      
+      width: 300px;
+      height: 200px;
+      background-color: green;
+    }
+    
+    #right {
+      float: right;
+      
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+    
+    footer {
+      width: 100%;
+      height: 100px;
+      background-color: black;
+      
+      clear: both;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+
+    }
+    
+  </style>
+  
+</head>
+<body>
+
+
+
+  <header></header>
+  
+  <article id="left"></article>
+  <main role="main"></main>
+  <article id="right"></article>
+  
+  <footer></footer>
+
+
+</body>
+</html>
+
+
+
+<!-- 마진 병합 현상-->
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>마진병합현상</title>
+
+  <style>
+    #box1 {
+      width: 100%;
+      height: 200px;
+      background-color: yellow;
+      margin-bottom: 150px;
+    }
+
+    #box2 {
+      width: 100%;
+      height: 200px;
+      background-color: pink;
+      margin-top: 100px;
+    }
+
+    main {
+      width: 100%;
+      height: 400px;
+      background-color: yellow;
+      margin-top: 100px;
+    }
+
+    article {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      margin-top: 100px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- 형제 지간에 발생하는 마진 병합 현상 -->
+  <div id="box1"></div>
+  <div id="box2"></div>
+
+
+  <!-- 부모 자식 지간에 발생하는 마진 병합 현상 -->
+  <main role="main">
+    <article></article>
+  </main>
+
+
+</body>
+
+</html>
