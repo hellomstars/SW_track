@@ -43,9 +43,9 @@ class Animal {
     }
 }
 
-const duck = new Animal("duck", "quack");
+const duck_quack = new Animal("duck", "quack");
 
-module.exports = duck;
+module.exports = duck_quack;
 
 
 
