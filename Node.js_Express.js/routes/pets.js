@@ -1,5 +1,4 @@
 const { Router } = require('express');
-
 const router = Router({ mergeParams: true });
 
 /* GET 라우팅 추가 */ 

@@ -8,5 +8,4 @@ router.get('/', (req, res) => {
 
 /* /:userId/pets 경로에 petsRouter 연결 */
 router.use('/:userId/pets', petsRouter);
-
 module.exports = router;
