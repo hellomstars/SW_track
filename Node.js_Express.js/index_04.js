@@ -36,7 +36,7 @@ app_2.listen(8080);
 
 
 
-// 계층적 구조의 라우터 사용하기
+// 계층적 구조의 라우터 사용하기 - users.js
 const express = require('express');
 
 const userRouter = require('./routes/users');
@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
     res.send("OK");
 });
 
-/* 라우터를 '/users' 경로에 연결 */
+   /* 라우터를 '/users' 경로에 연결 */
 app.use('/users', userRouter);
 
 app.listen(8080);
