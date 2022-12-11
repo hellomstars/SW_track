@@ -86,6 +86,7 @@ carrot_btn.addEventListener("click", showText);
    // 대상객체.addEventListener(이벤트명, 실행할이벤트핸들러, 이벤트전파방식)
 
 
+
 // 누르면 바뀌게
 var target = document.getElementById("btn");
 
