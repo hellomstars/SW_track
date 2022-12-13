@@ -1,0 +1,42 @@
+extends layout
+
+block content
+  div
+    h2 학생 수정
+    div
+      label 이름
+      input(type="text" name="name" value=student&&student.name)
+    div
+      label 나이
+      input(type="text" name="age" value=student&&student.age)
+    div
+      label 전공
+      input(type="text" name="major" value=student&&student.major)
+    div: button(onclick='fetchUpdate()') 제출
+  script(type="text/javascript").
+    function fetchUpdate() {
+      const new_name = document.getElementsByName('name')[0].value;
+      const new_age = document.getElementsByName('age')[0].value;
+      const new_major = document.getElementsByName('major')[0].value;
+      
+      const data = JSON.stringify({
+        name: new_name,
+        age: new_age,
+        major: new_major,
+      });
+      
+      fetch("/students/#{student.shortId}", { 
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: data
+      }).then((res) => {
+          if (res.ok) {
+            window.location.href = '/view'
+          }
+        })
+        .catch((err) => {
+          console.log('오류 발생');
+        });
+    }
