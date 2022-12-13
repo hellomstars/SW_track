@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  div
+    h2 학생 목록
+  if students==""
+    p 등록된 학생이 없습니다.
+  else 
+    table
+      tbody
+        tr
+          th= "name"
+          th= "age"
+          th= "major"
+        each student in students
+          tr
+            td= student.name
+            td= student.age
+            td= student.major

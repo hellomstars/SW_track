@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  div
+    h2 학생 등록
+    form(action="/students", method="post" id="add-student")
+      div
+        label 이름:
+        input(type="text", name="name", id="name")
+      div
+        label 나이:
+        input(type="text", name="age", id="age")
+      div
+        label 전공:
+        input(type="text", name="major", id="major")
+      div: input(type="submit" value="제출")
