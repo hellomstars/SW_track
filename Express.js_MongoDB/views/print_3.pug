@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  div
+    table
+      tbody
+        tr
+          th= "name"
+          th= "age"
+          th= "major"
+        each student in students
+          tr
+            td= student.name
+            td= student.age
+            td= student.major
+            td: button(onclick='fetchDelete("'+student.shortId+'")') 삭제
+  script(type="text/javascript").
+    function fetchDelete(id) {
+      fetch("/students/"+id, { 
+        method: 'DELETE',
+      }).then((res) => {
+          if (res.ok) {
+            window.location.href = '/view'
+          }
+        })
+        .catch((err) => {
+          console.log('오류 발생');
+        });
+    }
